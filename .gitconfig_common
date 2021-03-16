@@ -1,0 +1,30 @@
+[core]
+	autocrlf = input
+	safecrlf = false
+	eol = lf
+	editor = nvim
+[commit]
+    verbose = true
+[pull]
+    rebase = true
+
+[merge]
+    tool = nvimdiff4
+    # if not using a tool name with builtin support, must supply mergetool cmd as below
+[mergetool "nvimdiff4"]
+    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+    trustExitCode = true #to abort a commit by :cq
+[mergetool "nfugitive"]
+    cmd = nvim -f -c "Gdiff" "$MERGED"
+
+[diff]
+    tool = nvimdiff2
+[difftool "nvimdiff2"]
+    cmd = nvim -d $LOCAL $REMOTE
+    trustExitCode = true #to abort a commit by :cq
+[alias]
+    conflicted = !vim +Conflicted
+    lg = log --graph --pretty=format:'%C(auto)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    # 1)Save uncommitted changes locally with git stash. 2)Local changes will be rebased on top of the remote changes. 3)Return your uncommitted changes locally again.
+    upgrade = pull --rebase --autostash
+
