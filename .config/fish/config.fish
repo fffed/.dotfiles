@@ -1,5 +1,5 @@
 #remove welcome message
-set fish_greeting
+# set -U fish_greeting
 
 # set fish_color_cwd dd9922
 # set fish_color dd9922
