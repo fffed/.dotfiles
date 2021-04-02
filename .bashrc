@@ -217,6 +217,9 @@ fi
 #add scripts directory to the PATH variable, so it could be possible to run its content as commands like "command.sh"
 export PATH=$PATH:~/scripts
 
+#add neovim build from source
+export PATH="$HOME/neovim/bin:$PATH"
+
 #completion for kitty
 source <(kitty + complete setup bash)
 
