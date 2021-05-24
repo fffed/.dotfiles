@@ -15,6 +15,9 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term foot
+
+#next called from waybar
+set $network_manager foot --app-id floating_foot nmtui
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -26,7 +29,9 @@ exec autotiling
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg ~/Pictures/arrttttaqhx.jpeg fill
+exec_always ~/.config/sway/wallpapers.sh
 #
 # Example configuration:
 #
