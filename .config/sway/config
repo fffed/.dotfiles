@@ -13,6 +13,7 @@ set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term foot
 
@@ -31,13 +32,28 @@ exec autotiling
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg ~/Pictures/arrttttaqhx.jpeg fill
-exec_always ~/.config/sway/wallpapers.sh
+set $load_wallpapper ~/.config/sway/wallpapers.sh
+exec_always $load_wallpapper
+bindsym $mod+f5 exec $load_wallpapper
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+set $laptop_display eDP-1
+output $laptop_display position 0 0 res 1920x1080
+output HDMI-A-1 position 1920 0 res 1920x1080
+# focus output HDMI-A-1
+exec swaymsg focus output HDMI-A-1
+
+# Closed Display mode
+bindswitch --reload --locked lid:on output $laptop_display disable
+bindswitch --reload --locked lid:off output $laptop_display enable
+exec_always ~/.config/sway/closed-lid.sh $laptop_display
+
+bindsym $mod+f12 output $laptop_display toggle
 
 ### Idle configuration
 #
