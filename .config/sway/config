@@ -67,6 +67,20 @@ bindsym $mod+f12 output $laptop_display toggle
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+#
+### Lockscreen configuration
+#
+set $locking swaylock --daemonize --config $HOME/.config/swaylock/config
+
+exec swayidle -w \
+        timeout 240 'light -T 0.5' resume 'light -T 2 && light -G | cut -d'.' -f1 | xargs ~/.config/sway/brightness-notify.sh' \
+        timeout 300 'exec $locking'\
+        timeout 360 'swaymsg "output * dpms off"' \
+        resume 'swaymsg "output * dpms on"' \
+        before-sleep 'exec $locking'
+## Lock Screen
+ #bindsym $mod+f1 exec ~/.config/sway/lockman.sh
+ bindsym $mod+x exec $locking
 
 ### Input configuration
 #
@@ -92,6 +106,9 @@ bindsym $mod+f12 output $laptop_display toggle
        dwt enabled
        natural_scroll enabled
    }
+   
+# to automatically change the keyboard layout on a per-window basis
+   exec swaykbdd
 
 ### Show cheatsheet inside the terminal for bindings
  bindsym $mod+i exec $term -a cheatsheet bash ~/.config/sway/cheatsheet.sh
@@ -136,7 +153,7 @@ bindsym $mod+f12 output $laptop_display toggle
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym --to-code $mod+Shift+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -204,6 +221,9 @@ bindsym $mod+f12 output $laptop_display toggle
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    bindsym $mod+Tab workspace next
+    bindsym $mod+Shift+Tab workspace prev
 #
 # Layout stuff:
 #
