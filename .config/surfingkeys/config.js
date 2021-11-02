@@ -19,3 +19,6 @@ addSearchAliasX('w', 'qwant', 'https://www.qwant.com/?t=web&q=', 's', 'https://a
     });
 });
 
+if (navigator.brave) {
+    settings.defaultSearchEngine = "b";
+}
