@@ -72,10 +72,12 @@ settings.omnibarMaxResults = 15;
 // Uncomment to enable
 
 // Tomorrow-Night
+/* -- DELETE LINE TO ENABLE THEME
 Hints.style('border: solid 2px #373B41; color:#52C196; background: initial; background-color: #1D1F21;');
 Hints.style("border: solid 2px #373B41 !important; padding: 1px !important; color: #C5C8C6 !important; background: #1D1F21 !important;", "text");
 Visual.style('marks', 'background-color: #52C19699;');
 Visual.style('cursor', 'background-color: #81A2BE;');
+-- DELETE LINE TO ENABLE THEME */
 
 // Nord
 /* -- DELETE LINE TO ENABLE THEME
@@ -86,12 +88,10 @@ Visual.style('cursor', 'background-color: #88C0D0;');
 -- DELETE LINE TO ENABLE THEME */
 
 // Doom One
-/* -- DELETE LINE TO ENABLE THEME
 Hints.style('border: solid 2px #282C34; color:#98be65; background: initial; background-color: #2E3440;');
 Hints.style("border: solid 2px #282C34 !important; padding: 1px !important; color: #51AFEF !important; background: #2E3440 !important;", "text");
 Visual.style('marks', 'background-color: #98be6599;');
 Visual.style('cursor', 'background-color: #51AFEF;');
--- DELETE LINE TO ENABLE THEME */
 
 // Monokai
 /* -- DELETE LINE TO ENABLE THEME
@@ -113,6 +113,7 @@ settings.theme = `
   /* -------------------- */
   /* -- Tomorrow Night -- */
   /* -------------------- */
+  /* -- DELETE LINE TO ENABLE THEME
   --fg: #C5C8C6;
   --bg: #282A2E;
   --bg-dark: #1D1F21;
@@ -121,6 +122,7 @@ settings.theme = `
   --accent-fg: #52C196;
   --info-fg: #AC7BBA;
   --select: #585858;
+  -- DELETE LINE TO ENABLE THEME */
   /* Unused Alternate Colors */
   /* --cyan: #4CB3BC; */
   /* --orange: #DE935F; */
@@ -146,7 +148,6 @@ settings.theme = `
   /* -------------------- */
   /* --    DOOM ONE    -- */
   /* -------------------- */
-  /* -- DELETE LINE TO ENABLE THEME
   --fg: #51AFEF;
   --bg: #2E3440;
   --bg-dark: #21242B;
@@ -155,7 +156,6 @@ settings.theme = `
   --accent-fg: #98be65;
   --info-fg: #C678DD;
   --select: #4C566A;
-  -- DELETE LINE TO ENABLE THEME */
   /* Unused Alternate Colors */
   /* --border-alt: #282C34; */
   /* --cyan: #46D9FF; */
