@@ -23,7 +23,7 @@
     cmd = nvim -d $LOCAL $REMOTE
     trustExitCode = true #to abort a commit by :cq
 [alias]
-    conflicted = !vim +Conflicted
+    conflicted = !nvim +Conflicted
     lg = log --graph --pretty=format:'%C(auto)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     # 1)Save uncommitted changes locally with git stash. 2)Local changes will be rebased on top of the remote changes. 3)Return your uncommitted changes locally again.
     upgrade = pull --rebase --autostash
