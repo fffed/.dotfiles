@@ -6,9 +6,74 @@
 
 config_version: 2
 settings:
+  auto_save.interval:
+    global: 15000
   auto_save.session:
     global: true
-  backend:
-    global: webengine
-  content.notifications.enabled:
+  bindings.commands:
+    global:
+      normal:
+        ;t: spawn --userscript translate --text -t ru
+        ;z: spawn --userscript password_fill
+  content.autoplay:
     global: false
+  content.geolocation:
+    https://galanteya.by: false
+    https://www.nike.com: false
+  content.notifications:
+    https://by.wildberries.ru: false
+    https://dev-qa.com: false
+    https://git.epam.com: true
+    https://nalog-plati.ru: false
+    https://originalpoddelka.ru: false
+    https://tass.ru: false
+    https://www.gearbest.com: false
+    https://www.rbc.ua: false
+    https://www.reddit.com: false
+    https://xn--80adkubstggd.xn--p1ai: false
+  content.register_protocol_handler:
+    https://mail.yandex.com?mailto=%25s: false
+  fonts.default_family:
+    global: null
+  fonts.default_size:
+    global: 10pt
+  fonts.web.size.default:
+    global: 16
+  fonts.web.size.default_fixed:
+    global: 13
+  spellcheck.languages:
+    global:
+    - en-US
+  tabs.close_mouse_button_on_bar:
+    global: new-tab
+  tabs.favicons.scale:
+    global: 1.2
+  tabs.favicons.show:
+    global: always
+  tabs.focus_stack_size:
+    global: 10
+  tabs.indicator.padding:
+    global:
+      bottom: 2
+      left: 0
+      right: 4
+      top: 2
+  tabs.indicator.width:
+    global: 3
+  tabs.new_position.unrelated:
+    global: last
+  tabs.padding:
+    global:
+      bottom: 3
+      left: 5
+      right: 5
+      top: 3
+  tabs.pinned.frozen:
+    global: true
+  url.default_page:
+    global: about:blank
+  url.searchengines:
+    global:
+      DEFAULT: https://qwant.com/?q={}
+      ddg: https://duckduckgo.com/?q={}
+      g: https://www.google.com/search?hl=en&q={}
