@@ -1,0 +1,201 @@
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "sway/window"
+        ],
+    "modules-center": ["custom/clock"],
+    "modules-right": [
+        "sway/language",
+        "tray",
+        "pulseaudio",
+        "network",
+        "temperature",
+        "battery",
+        "idle_inhibitor"
+        ],
+    // Modules configuration
+    "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+        "format": "{name}: {icon}",
+        "format-icons": {
+//"1:   Mail "
+//"2:   Terminal "
+//"3:   Firefox "
+//"4:   Code "
+//"5:   Files "
+//"6:   Media "
+//"7:   Design "
+//"8:   Chat "
+//"9:   General "
+//"10:   Settings "
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": ""
+    //      "1": "",
+    //      "2": "",
+    //      "3": "",
+    //      "4": "",
+    //      "5": "",
+    //      "6": "",
+    //      "7": "",
+    //      "8": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+        }
+    },
+    "sway/window": {
+        "format": "{}",
+        "tooltip": false
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>",
+        "tooltip": true
+    },
+//    "mpd": {
+//        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
+//        "format-disconnected": "Disconnected ",
+//        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+//        "unknown-tag": "N/A",
+//        "interval": 2,
+//        "consume-icons": {
+//            "on": " "
+//        },
+//        "random-icons": {
+//            "off": "<span color=\"#f53c3c\"></span> ",
+//            "on": " "
+//        },
+//        "repeat-icons": {
+//            "on": " "
+//        },
+//        "single-icons": {
+//            "on": "1 "
+//        },
+//        "state-icons": {
+//            "paused": "",
+//            "playing": ""
+//        },
+//        "tooltip-format": "MPD (connected)",
+//        "tooltip-format-disconnected": "MPD (disconnected)"
+//    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+//    "bluetooth": {
+//        "interval": 30,
+//        "format": "{icon}",
+//        "format-alt": "bluetooth: {status}",
+//        "format-icons": {
+//            "enabled": "",
+//            "disabled": ""
+//        },
+//        "tooltip-format": "{}"
+//    },
+    //"clock": {
+    //    // "timezone": "America/New_York",
+    //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    //    "interval": 60,
+    //    "format-alt": "{:%Y-%m-%d %H:%M}"
+    //},
+    //"cpu": {
+    //    "format": "{usage}% ",
+    //    "tooltip": true
+    //},
+    //"memory": {
+    //    "format": "{}% "
+    //},
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "interval": 30,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["","",""]
+    },
+    //"backlight": {
+    //    // "device": "acpi_video1",
+    //    "format": "{percent}% {icon}",
+    //    "format-icons": ["", ""]
+    //},
+    "battery": {
+        "interval": 30,
+        "states": {
+            // "good": 95,
+            "warning": 20,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "bat": "BAT0"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "swaymsg exec \\$network_manager"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "ﱝ {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphones": [" ", " ", " "],
+            "hands-free": "וֹ",
+            "headset":  [" ", " ", " "],
+            "phone": [" ", " ", " "],
+            "portable": [" ", " ", " "],
+            "car": [" ", " ", " "],
+            "default": ["奄", "奔", "墳"]
+        },
+        // "on-click": "swaymsg exec \\$pulseaudio"
+        "on-click": "pavucontrol"
+        //another alternative with tui is pulsemixer
+    },
+    //"custom/menu": {
+    //    "format": "",
+    //    "on-click": "swaymsg exec \\$menu",
+    //    "tooltip": false
+    //},
+    //"custom/power": {
+    //    "format":"⏻",
+    //    "on-click": "exec ~/.config/waybar/power-menu.sh",
+    //    "tooltip": false,
+    //},
+    "custom/clock": {
+        "exec": "date +'%d %b %H:%M'",
+        "tooltip": false,
+        "interval": 10
+    }
+}
