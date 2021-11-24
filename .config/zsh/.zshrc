@@ -3,8 +3,8 @@
 fpath=($ZDOTDIR/plugins $fpath)
 
 HISTFILE=$ZDOTDIR/.zhistory        # History filepath
-HISTSIZE=10000                     # Maximum events for internal history
-SAVEHIST=10000                     # Maximum events in history file
+HISTSIZE=100000                     # Maximum events for internal history
+SAVEHIST=100000                     # Maximum events in history file
 
 gitplugins=~/sources/zsh
 

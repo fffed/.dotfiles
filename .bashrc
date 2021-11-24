@@ -224,4 +224,5 @@ export PATH="$HOME/neovim/bin:$PATH"
 source <(kitty + complete setup bash)
 
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
