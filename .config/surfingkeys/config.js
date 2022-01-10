@@ -7,7 +7,7 @@ api.map('<Ctrl-u>', 'e');
 
 // MAPPINGS
 // Create mapping in vim editor
-aceVimMap('kj', '<Esc>', 'insert');
+api.aceVimMap('kj', '<Esc>', 'insert');
 
 addSearchAliasX('b', 'brave', 'https://search.brave.com/search?source=web&q=', 's', 'https://search.brave.com/api/suggest?rich=true&source=web&q=', function(response) {
     var res = JSON.parse(response.text);
